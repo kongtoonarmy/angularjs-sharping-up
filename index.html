@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gemStore">
+<html lang="en" ng-app="store">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="libraries/bootstrap/bootstrap.min.css">
-    <script type="text/javascript" src="libraries/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>{{"Hello, Angular!"}}</h1>
+    <div ng-controller="StoreController">
+        <h> {{product.name}}</h>
+        <h> {{product.price}}</h>
+        <p> {{product.description}} </p>
+    </div>
+    <script type="text/javascript" src="libraries/angularjs/angular.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>
