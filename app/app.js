@@ -1,10 +1,12 @@
 var app = angular.module('store', []);
-app.controller('StoreController', ['$scope', function($scope) {
-    $scope.product = gem;
-}]);
+app.controller('StoreController', function() {
+    this.product = gem;
+});
 
 var gem = {
     name: 'Dodecahedron',
     price: 2.95,
-    description: 'Description of Dodecahedron'
+    description: 'Description of Dodecahedron',
+    canPurchase: true,
+    soldOut: true
 };

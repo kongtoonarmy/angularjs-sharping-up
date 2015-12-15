@@ -5,11 +5,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <div ng-controller="StoreController">
-        <h> {{product.name}}</h>
-        <h> {{product.price}}</h>
-        <p> {{product.description}} </p>
+<body ng-controller="StoreController as store">
+    <div ng-hide="store.product.soldOut">
+        <h> {{store.product.name}}</h>
+        <h> {{store.product.price}}</h>
+        <p> {{store.product.description}} </p>
+        <button ng-show="store.product.canPurchase">Add to Cart</button>
     </div>
     <script type="text/javascript" src="libraries/angularjs/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
