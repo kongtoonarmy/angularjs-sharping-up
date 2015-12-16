@@ -6,7 +6,7 @@ app.controller('StoreController', function() {
 var gem = [
     {
         name: 'iPad Mini 2',
-        price: 18900.95,
+        price: 16790.95,
         description: 'Description of iPad Mini 2',
         canPurchase: true,
         soldOut: true
@@ -22,6 +22,13 @@ var gem = [
         name: 'Nexus 5',
         price: 18900.3567,
         description: 'Description of Nexus 5',
+        canPurchase: true,
+        soldOut: false
+    },
+    {
+        name: 'Samsung Galaxy S6',
+        price: 22990.4,
+        description: 'Description of Samsung Galaxy S6',
         canPurchase: true,
         soldOut: false
     }
