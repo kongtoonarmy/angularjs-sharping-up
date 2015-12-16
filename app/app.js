@@ -13,9 +13,16 @@ var gem = [
     },
     {
         name: 'iPhone 6s Plus',
-        price: 29000.00,
+        price: 29000,
         description: 'Description of iPhone 6s Plus',
         canPurchase: false,
+        soldOut: false
+    },
+    {
+        name: 'Nexus 5',
+        price: 18900.3567,
+        description: 'Description of Nexus 5',
+        canPurchase: true,
         soldOut: false
     }
 ];

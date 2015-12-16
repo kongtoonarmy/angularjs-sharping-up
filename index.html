@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
 </head>
 <body ng-controller="StoreController as store">
-    <div ng-repeat="product in store.products">
-        <h> {{ product.name }}</h>
-        <h> {{ product.price }}</h>
-        <p> {{ product.description }} </p>
-        <button ng-show="product.canPurchase">Add to Cart</button>
-        <hr>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in store.products">
+            <h3>
+                {{product.name}}
+                <em class="pull-right">{{product.price | currency:"B ":1}}</em>
+            </h3>
+        </li>
+    </ul>
     <script type="text/javascript" src="libraries/angularjs/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
 </body>
