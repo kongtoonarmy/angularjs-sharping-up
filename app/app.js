@@ -1,12 +1,21 @@
 var app = angular.module('store', []);
 app.controller('StoreController', function() {
-    this.product = gem;
+    this.products = gem;
 });
 
-var gem = {
-    name: 'Dodecahedron',
-    price: 2.95,
-    description: 'Description of Dodecahedron',
-    canPurchase: true,
-    soldOut: true
-};
+var gem = [
+    {
+        name: 'iPad Mini 2',
+        price: 18900.95,
+        description: 'Description of iPad Mini 2',
+        canPurchase: true,
+        soldOut: true
+    },
+    {
+        name: 'iPhone 6s Plus',
+        price: 29000.00,
+        description: 'Description of iPhone 6s Plus',
+        canPurchase: false,
+        soldOut: false
+    }
+];
