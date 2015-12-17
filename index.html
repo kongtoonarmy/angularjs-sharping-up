@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="store">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
 </head>
-<body ng-controller="StoreController as store">
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
-            <h3>
-                {{product.name}}
-                <em class="pull-right">{{product.price | currency}}</em>
-                <img ng-src="assets/images/{{product.images[0].full}}" alt="image of product">
-            </h3>
-        </li>
-    </ul>
+<body class="container">
+    <section ng-controller="PanelController as panel">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active:panel.isSelected(1) }"><a href="#" ng-click="panel.selectTab(1)">Desciption</a></li>
+            <li ng-class="{ active:panel.isSelected(2) }"><a href="#" ng-click="panel.selectTab(2)">Specifications</a></li>
+            <li ng-class="{ active:panel.isSelected(3) }"><a href="#" ng-click="panel.selectTab(3)">Reviews</a></li>
+        </ul>
+
+        <div class="panel" ng-show="panel.isSelected(1)">
+            <h4>Description</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Atque doloribus dolorum commodi repellendus harum,
+                adipisci accusantium autem enim mollitia laborum suscipit iure accusamus illum quisquam,
+                odit facilis ad praesentium placeat!
+            </p>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(2)">
+            <h4>Specifications</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quos est blanditiis neque molestiae deserunt officia reiciendis necessitatibus,
+                temporibus repudiandae nisi, quia harum. Alias incidunt sit numquam! In nihil alias fugiat.
+            </p>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(3)">
+            <h4>Reviews</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quo voluptas aliquam unde ipsum recusandae, id, repellat corporis enim! Dicta quae harum id,
+                incidunt eos ut quis soluta molestias accusantium, sit?
+            </p>
+        </div>
+    </section>
     <script type="text/javascript" src="libraries/angularjs/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
 </body>
