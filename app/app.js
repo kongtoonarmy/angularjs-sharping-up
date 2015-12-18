@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('StoreController', function() {
+app.controller('ReviewController', function() {
     this.products = gem;
 });
 
