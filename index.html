@@ -4,57 +4,14 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
-    <style>
-    .ng-invalid.ng-dirty {
-        border-color: #FA787E;
-    }
-    .ng-valid.ng-dirty {
-        border-color: #78FA89;
-    }
-    </style>
 </head>
 
 <body class="container">
     <ul class="list-group" ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products">
-            <div class="panel">
-                <blockquote ng-repeat="review in product.reviews">
-                    <b>Stars: {{review.stars}}</b>
-                    {{review.body}}
-                    <cite>by: {{review.author}}</cite>
-                </blockquote>
+            <h3 ng-include="'product-title.html'">
 
-                <form name="reviewForm" class="form-horizontal" ng-controller="ReviewController as reviewCtrl"
-                    ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-                    <div class="form-group">
-                        <blockquote>
-                            <b>Stars: {{reviewCtrl.review.stars}}</b>
-                            {{reviewCtrl.review.body}}
-                            <cite>by: {{reviewCtrl.review.author}}</cite>
-                        </blockquote>
-                    </div>
-                    <div class="form-group">
-                        <label>Stars</label>
-                        <select ng-model="reviewCtrl.review.stars" class="form-control" required>
-                            <option value="1">1 star</option>
-                            <option value="2">2 star</option>
-                            <option value="3">3 star</option>
-                            <option value="4">4 star</option>
-                            <option value="5">5 star</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        Body
-                        <textarea ng-model="reviewCtrl.review.body" class="form-control" required></textarea>
-                    </div>
-                    <label>by: </label>
-                    <input name="author" ng-model="reviewCtrl.review.author" type="email" required
-                        class="ng-pristine ng-invalid">
-
-                    <div> reviewForm is {{reviewForm.$valid}}</div>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+            </h3>
         </li>
     </ul>
     <script type="text/javascript" src="libraries/angularjs/angular.js"></script>

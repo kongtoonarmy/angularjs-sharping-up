@@ -50,17 +50,19 @@ app.controller('StoreController', function() {
                     author: "don@hater.com"
                 }
             ]
+        },
+        {
+            name: 'Nexus 5',
+            price: 18900.3567,
+            description: 'Description of Nexus 5',
+            canPurchase: true,
+            soldOut: false,
+            images: [
+                {
+                    full: 'nexus5.jpg',
+                    thumb: 'nexus5.jpg'
+                }
+            ]
         }
     ];
 });
-
-app.controller('ReviewController', function() {
-
-    this.review = {};
-    this.addReview = function (product) {
-        product.reviews.push(this.review);
-        this.review = {};
-    };
-});
-
-
