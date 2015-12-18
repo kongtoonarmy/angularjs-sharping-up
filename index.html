@@ -6,39 +6,46 @@
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
 </head>
 <body class="container">
-    <section ng-controller="PanelController as panel">
-        <ul class="nav nav-pills">
-            <li ng-class="{ active:panel.isSelected(1) }"><a href="#" ng-click="panel.selectTab(1)">Desciption</a></li>
-            <li ng-class="{ active:panel.isSelected(2) }"><a href="#" ng-click="panel.selectTab(2)">Specifications</a></li>
-            <li ng-class="{ active:panel.isSelected(3) }"><a href="#" ng-click="panel.selectTab(3)">Reviews</a></li>
-        </ul>
+    <ul class="list-group" ng-controller="StoreController as store">
+        <li class="list-group-item" ng-repeat="product in store.products">
+            <div class="panel">
+                <h4>Review</h4>
+                <blockquote ng-repeat="review in product.reviews">
+                    <b>Stars: {{review.stars}}</b>
+                    {{review.body}}
+                    <cite>by: {{review.author}}</cite>
+                </blockquote>
 
-        <div class="panel" ng-show="panel.isSelected(1)">
-            <h4>Description</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque doloribus dolorum commodi repellendus harum,
-                adipisci accusantium autem enim mollitia laborum suscipit iure accusamus illum quisquam,
-                odit facilis ad praesentium placeat!
-            </p>
-        </div>
-        <div class="panel" ng-show="panel.isSelected(2)">
-            <h4>Specifications</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quos est blanditiis neque molestiae deserunt officia reiciendis necessitatibus,
-                temporibus repudiandae nisi, quia harum. Alias incidunt sit numquam! In nihil alias fugiat.
-            </p>
-        </div>
-        <div class="panel" ng-show="panel.isSelected(3)">
-            <h4>Reviews</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quo voluptas aliquam unde ipsum recusandae, id, repellat corporis enim! Dicta quae harum id,
-                incidunt eos ut quis soluta molestias accusantium, sit?
-            </p>
-        </div>
-    </section>
+                <form name="reviewForm" class="form-horizontal">
+                    <div class="form-group">
+                        <blockquote>
+                            <b>Stars: {{review.stars}}</b>
+                            {{review.body}}
+                            <cite>by: {{review.author}}</cite>
+                        </blockquote>
+                    </div>
+                    <div class="form-group">
+                        <labe>Stars</labe>
+                        <select ng-model="review.stars" class="form-control">
+                            <option value="1">1 star</option>
+                            <option value="2">2 star</option>
+                            <option value="3">3 star</option>
+                            <option value="4">4 star</option>
+                            <option value="5">5 star</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        Body
+                        <textarea ng-model="review.body" class="form-control"></textarea>
+                    </div>
+                    <label>by: </label>
+
+                    <input ng-model="review.author" type="email">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </li>
+    </ul>
     <script type="text/javascript" src="libraries/angularjs/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
 </body>
