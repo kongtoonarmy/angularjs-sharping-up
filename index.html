@@ -15,7 +15,7 @@
 </head>
 
 <body class="container">
-    <ul class="list-group" ng-controller="ReviewController as store">
+    <ul class="list-group" ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products">
             <div class="panel">
                 <blockquote ng-repeat="review in product.reviews">
@@ -28,9 +28,9 @@
                     ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                     <div class="form-group">
                         <blockquote>
-                            <b>Stars: {{review.stars}}</b>
-                            {{review.body}}
-                            <cite>by: {{review.author}}</cite>
+                            <b>Stars: {{reviewCtrl.review.stars}}</b>
+                            {{reviewCtrl.review.body}}
+                            <cite>by: {{reviewCtrl.review.author}}</cite>
                         </blockquote>
                     </div>
                     <div class="form-group">
